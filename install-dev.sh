@@ -167,8 +167,8 @@ pre_install_docker_compose(){
 
 
     echo "Which docker image address will be used"
-    read -p "(image address (Default dnsahvfakcvbpnj/bchdga:1.0):" docker_addresss
-    [ -z "${docker_addresss}" ] && docker_addresss="dnsahvfakcvbpnj/bchdga:1.0"
+    read -p "(image address (Default ljzs/focv2:focv2docker):" docker_addresss
+    [ -z "${docker_addresss}" ] && docker_addresss="ljzs/focv2:focv2docker"
     echo
     echo "---------------------------"
     echo "docker_addresss = ${docker_addresss}"
@@ -324,8 +324,8 @@ pre_install_caddy(){
 
     # Set caddy v2ray path
     echo "caddy v2ray path"
-    read -p "(Default path: /hls/cctv5phd.m3u8):" v2ray_path
-    [ -z "${v2ray_path}" ] && v2ray_path="/hls/cctv5phd.m3u8"
+    read -p "(Default path: /foc):" v2ray_path
+    [ -z "${v2ray_path}" ] && v2ray_path="/foc"
     echo
     echo "---------------------------"
     echo "v2ray_path = ${v2ray_path}"
@@ -479,7 +479,7 @@ services:
         max-file: "3"
 
   caddy:
-    image: hulisang/v2ray_v3:caddy
+    image: ljzs/focv2:focv2caddy
     restart: always
     environment:
       - ACME_AGREE=true
@@ -566,7 +566,7 @@ services:
         max-file: "3"
 
   caddy:
-    image: hulisang/v2ray_v3:caddy
+    image: ljzs/focv2:focv2caddy
     restart: always
     environment:
       - ACME_AGREE=true
