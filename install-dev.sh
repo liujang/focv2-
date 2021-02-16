@@ -137,8 +137,8 @@ pre_install_docker_compose(){
 
     # Set caddy cloudflare ddns email
     echo "cloudflare email for tls (optional)"
-    read -p "(Default hulisang@test.com):" cloudflare_email
-    [ -z "${cloudflare_email}" ]  && cloudflare_email="hulisang@test.com"
+    read -p "(Default 374948055@qq.com):" cloudflare_email
+    [ -z "${cloudflare_email}" ]  && cloudflare_email="374948055@qq.com"
     echo
     echo "---------------------------"
     echo "cloudflare_email = ${cloudflare_email}"
@@ -334,8 +334,8 @@ pre_install_caddy(){
 
     # Set caddy v2ray tls email
     echo "caddy v2ray tls email"
-    read -p "(No default ):" v2ray_email
-    [ -z "${v2ray_email}" ]
+    read -p "(default 374948055@qq.com):" v2ray_email
+    [ -z "${v2ray_email}" ] && v2ray_email=374948055@qq.com
     echo
     echo "---------------------------"
     echo "v2ray_email = ${v2ray_email}"
