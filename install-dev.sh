@@ -147,8 +147,8 @@ pre_install_docker_compose(){
 
     # Set caddy cloudflare ddns key
     echo "cloudflare key for tls (optional)"
-    read -p "(Default bbbbbbbbbbbbbbbbbb ):" cloudflare_key
-    [ -z "${cloudflare_key}" ] && cloudflare_key="bbbbbbbbbbbbbbbbbb"
+    read -p "(Default 94d09e2d22ff5933e521f31d7e39f1011d060 ):" cloudflare_key
+    [ -z "${cloudflare_key}" ] && cloudflare_key="94d09e2d22ff5933e521f31d7e39f1011d060"
     echo
     echo "---------------------------"
     echo "cloudflare_key = ${cloudflare_key}"
@@ -157,8 +157,8 @@ pre_install_docker_compose(){
     echo
 
     echo "Which connection do you prefer 0 for webapi 1 for mysql"
-    read -p "(v2ray_usemysql (Default 0):" v2ray_usemysql
-    [ -z "${v2ray_usemysql}" ] && v2ray_usemysql=0
+    read -p "(v2ray_usemysql (Default 1):" v2ray_usemysql
+    [ -z "${v2ray_usemysql}" ] && v2ray_usemysql=1
     echo
     echo "---------------------------"
     echo "v2ray_usemysql = ${v2ray_usemysql}"
